@@ -2,8 +2,9 @@ from dash import Dash, dcc, html
 from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
+import dash_bootstrap_components as dbc
 
-app = Dash(__name__)
+app = Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
 
 # df = pd.DataFrame({
 #     "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
@@ -24,7 +25,7 @@ fig2 = px.bar(df_police, x='age')
 
 app.layout = html.Div(children=[
 
-    html.H1(children='Police Firearm Discharge'),
+    html.H1(children='Police Firearm Discharge', className='Header'),
 
     html.Div(children='''Dash: A web application framework for your data.'''),
 
